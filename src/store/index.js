@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import createLogger from 'vuex/dist/logger'
 
 import state from './state'
+import mutations from './mutations'
 
 Vue.use(Vuex)
 
