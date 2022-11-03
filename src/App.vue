@@ -11,7 +11,7 @@ import AppHeader from '@/components/AppHeader'
 import AppFooter from '@/components/AppFooter'
 
 export default {
-  name: 'app',
+  name: 'App',
   components:{
     AppHeader,
     AppFooter,

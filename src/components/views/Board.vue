@@ -21,7 +21,7 @@
   <script>
   import Column from '@/components/Column'
   export default {
-    name: 'board',
+    name: 'Board',
     components: { Column },
     props: {
       name: String,
