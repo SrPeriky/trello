@@ -1,8 +1,8 @@
 {
   "name": "trello",
   "version": "1.0.0",
-  "description": "clon de trello en vue",
-  "author": "SrPeriky",
+  "description": "A Vue.js project",
+  "author": "GermanVelandia <german.velandia@swissaxis.ch>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "firebase": "^9.13.0",
+    "node-sass": "^7.0.3",
+    "sass-loader": "^13.1.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vuex": "^4.1.0"

@@ -3,8 +3,8 @@
         <h3>Tableros</h3>
         <div class="boards-collection">
             <input type="text" placeholder="Nuevo tablero" v-model="boardName" @keyup.enter="add()" />
-            <BoardCard v-for="(board, index) in boards" :key="index" :name="board.name" :id="board.id">
-            </BoardCard>
+            <board-card v-for="(board, index) in boards" :key="index" :name="board.name" :id="board.id">
+            </board-card>
         </div>
     </div>
 </template>
@@ -25,7 +25,6 @@ export default {
     },
     methods: {
         add() {
-            this.addBoard({ name: this.boardName })
             this.boardName = ''
         }
     },

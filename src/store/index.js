@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import createLogger from 'vuex/dist/logger'
+import createLogger from 'vuex'
 
 import state from './state'
 import mutations from './mutations'
