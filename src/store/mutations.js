@@ -2,7 +2,7 @@ import Vue from 'vue'
 import * as types from './mutation-types'
 
 export default {
-  // Fetch de los panel
+  // Fetch the boards created by user
   [types.FETCH_BOARDS_REQUEST] (state) {
     state.fetchingData = true
     state.error = null
@@ -19,7 +19,7 @@ export default {
     state.error = error
   },
 
-  // Fetch para las listas de un panel
+  // Fetch the lists from a board
   [types.FETCH_LISTS_REQUEST] (state) {
     state.fetchingData = true
     state.error = null
@@ -36,7 +36,7 @@ export default {
     state.error = error
   },
 
-  // Fetch para las tareas de una lista
+  // Fetch the tasks from a list
   [types.FETCH_TASKS_REQUEST] (state) {
     state.fetchingData = true
     state.error = null
@@ -53,28 +53,28 @@ export default {
     state.error = error
   },
 
-  // Nuevo panel
+  // Create a new board
   [types.ADD_BOARD] (state, { board }) {
     Vue.set(state.boards, board.id, board)
   },
 
-  // nueva lista
+  // Create a new task list
   [types.ADD_COLUMN] (state, { column }) {
     Vue.set(state.lists, column.id, column)
   },
 
-  // agregar tarea
+  // Add a new task to a task list
   [types.ADD_TASK] (state, { task }) {
     Vue.set(state.tasks, task.id, task)
   },
 
-  // borrar tarea
+  // Delete a task from a task list
   [types.DELETE_TASK] (state, { taskId }) {
     state.tasks = Object.values(state.tasks)
       .filter(task => task.id !== taskId)
   },
 
-  // completar tarea
+  // Check a task as completed
   [types.MARK_AS_COMPLETED] (state, { task }) {
     task.completed = !task.completed
   }

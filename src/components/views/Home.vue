@@ -1,51 +1,80 @@
 <template>
-    <div>
-        <h3>Tableros</h3>
-        <div class="boards-collection">
-            <input type="text" placeholder="Nuevo tablero" v-model="boardName" @keyup.enter="add()" />
-            <board-card v-for="(board, index) in boards" :key="index" :name="board.name" :id="board.id">
-            </board-card>
-        </div>
+  <div>
+    <h3>My Boards</h3>
+    <div class="boards-collection">
+      <template v-if="fetchingData">
+        <span>Loading...</span>
+      </template>
+      <input
+        type="text"
+        placeholder= "Add new board"
+        v-model="boardName"
+        @keyup.enter="add()"
+      />
+      <board-card
+        v-for="(board, index) in boards"
+        :key="index"
+        :name="board.name"
+        :id="board.id">
+      </board-card>
     </div>
+  </div>
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
 import BoardCard from '@/components/BoardCard'
+
 export default {
-  name: 'Home',
+  name: 'home-view',
   components: { BoardCard },
+
   data () {
     return {
-      boardName: '',
-      boards: [
-        { id: 1, name: 'uno' },
-        { id: 2, name: 'T dos' }
-      ]
+      boardName: ''
     }
   },
+
+  computed: {
+    ...mapState([
+      'boards',
+      'fetchingData',
+      'error'
+    ])
+  },
+
   methods: {
+    ...mapActions([
+      'fetchBoards',
+      'addBoard'
+    ]),
     add () {
+      this.addBoard({ name: this.boardName })
       this.boardName = ''
     }
+  },
+
+  created () {
+    this.fetchBoards({ user: 1 })
   }
 }
 </script>
 
 <style lang="scss" scoped>
-h3 {
+  h3 {
     text-align: left;
     margin: 1.5rem;
-}
+  }
 
-.boards-collection {
+  .boards-collection {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     padding-top: 1rem;
-}
+  }
 
-input {
+  input {
     box-sizing: border-box;
     background-color: #546E7A;
     border: 2px solid #546E7A;
@@ -57,12 +86,12 @@ input {
 
     &:focus,
     &:active {
-        background-color: white;
-        color: #546E7A;
+      background-color: white;
+      color: #546E7A;
     }
 
     &::placeholder {
-        color: white;
+      color: white;
     }
-}
+  }
 </style>
