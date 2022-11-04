@@ -9,39 +9,39 @@
       </task-list>
     </section>
   </template>
-  
-  <script>
-  import { mapGetters, mapActions } from 'vuex'
-  import TaskList from '@/components/TasksList'
-  
-  export default {
-    name: 'column',
-    components: { TaskList },
-  
-    props: {
-      listId: String,
-      name: String
-    },
-  
-    computed: {
-      ...mapGetters([
-        'getTasksFromList'
-      ]),
-      tasksList () {
-        return this.getTasksFromList(this.listId)
-      }
-    },
-  
-    methods: {
-      ...mapActions(['fetchTasks'])
-    },
-  
-    created () {
-      this.fetchTasks({ list: this.listId })
+
+<script>
+import { mapGetters, mapActions } from 'vuex'
+import TaskList from '@/components/TasksList'
+
+export default {
+  name: 'column',
+  components: { TaskList },
+
+  props: {
+    listId: String,
+    name: String
+  },
+
+  computed: {
+    ...mapGetters([
+      'getTasksFromList'
+    ]),
+    tasksList () {
+      return this.getTasksFromList(this.listId)
     }
+  },
+
+  methods: {
+    ...mapActions(['fetchTasks'])
+  },
+
+  created () {
+    this.fetchTasks({ list: this.listId })
   }
-  </script>
-  
+}
+</script>
+
   <style lang="scss" scoped>
     section {
       box-sizing: border-box;
@@ -53,7 +53,7 @@
       margin: 1rem;
       padding: 1rem;
       width: 100%;
-  
+
       @media screen and (min-width: 600px) {
         width: calc(50% - 2rem - 2px);
       }
@@ -64,13 +64,13 @@
         width: calc(25% - 2rem - 2px);
       }
     }
-  
+
     header {
       color: #37474f;
       margin: 0;
       padding-bottom: 1rem;
     }
-  
+
     h3 {
       margin: 0;
     }

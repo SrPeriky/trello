@@ -5,17 +5,17 @@
         <span class="board-card-title">❏ {{ name }}</span>
     </router-link>
   </template>
-  
-  <script>
-  export default {
-    name: 'board-card',
-    props: {
-      id: String,
-      name: String
-    }
+
+<script>
+export default {
+  name: 'board-card',
+  props: {
+    id: String,
+    name: String
   }
-  </script>
-  
+}
+</script>
+
   <style lang="scss" scoped>
     .board-card {
       background-color: #546E7A;
@@ -32,16 +32,16 @@
       transition: all 600ms ease;
       width: 100%;
       height: 100px;
-  
+
       &-title {
         font-size: 1.2rem;
       }
-  
+
       &:hover {
         background-color: #90a4ae;
         font-weight: bold;
       }
-  
+
       @media screen and (min-width: 600px) {
         width: 33%;
       }

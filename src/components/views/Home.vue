@@ -8,29 +8,29 @@
         </div>
     </div>
 </template>
-  
+
 <script>
 import BoardCard from '@/components/BoardCard'
 export default {
-    name: 'Home',
-    components: { BoardCard },
-    data() {
-        return {
-            boardName: '',
-            boards: [
-                { id: 1, name: "uno" },
-                { id: 2, name: "T dos" },
-            ]
-        }
-    },
-    methods: {
-        add() {
-            this.boardName = ''
-        }
-    },
+  name: 'Home',
+  components: { BoardCard },
+  data () {
+    return {
+      boardName: '',
+      boards: [
+        { id: 1, name: 'uno' },
+        { id: 2, name: 'T dos' }
+      ]
+    }
+  },
+  methods: {
+    add () {
+      this.boardName = ''
+    }
+  }
 }
 </script>
-  
+
 <style lang="scss" scoped>
 h3 {
     text-align: left;

@@ -15,7 +15,7 @@ export default {
   name: 'app',
   components: { AppHeader, AppFooter },
 
-  data() {
+  data () {
     return {
       boardName: ''
     }
@@ -32,7 +32,7 @@ export default {
     ...mapActions([
       'addBoard'
     ]),
-    add() {
+    add () {
       this.addBoard({ name: this.boardName })
       this.boardName = ''
     }

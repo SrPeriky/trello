@@ -14,16 +14,16 @@
       </template>
     </header>
   </template>
-  
-  <script>
-  export default {
-    name: 'app-header',
-    props: {
-      user: Object
-    }
+
+<script>
+export default {
+  name: 'app-header',
+  props: {
+    user: Object
   }
-  </script>
-  
+}
+</script>
+
   <style lang="scss" scoped>
     header {
       box-sizing: border-box;
@@ -33,7 +33,7 @@
       justify-content: flex-start;
       margin: 0;
       padding: 1rem;
-  
+
       .title {
         align-self: center;
         color: #eceff1;
@@ -42,7 +42,7 @@
         margin-right: 1rem;
       }
     }
-  
+
     .btn-header {
       background-color: #455A64;
       border: none;
@@ -56,25 +56,25 @@
       padding: 0.5rem;
       margin: 0 0.5rem
     }
-  
+
     .btn-login {
       background-color: #00695c;
       color: #fafafa;
     }
-  
+
     .userinfo {
       align-items: center;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-  
+
       span {
         color: #fafafa;
         font-size: 0.9rem;
         font-weight: normal;
       }
     }
-  
+
     img {
       width: 32px;
       border-radius: 50%;
